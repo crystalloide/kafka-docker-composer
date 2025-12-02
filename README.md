@@ -65,7 +65,7 @@ Les versions du nouveau Control Center compatibles avec Confluent Platform 8.0 s
 Pour utiliser le script ici, il faut donc prendre une release <8.0.0
 
 | Confluent Platform	| Apache Kafka®	| Release Date		| Confluent Community software End of Support		| Confluent Enterprise Standard End of Support	| Confluent Enterprise Platinum End of Support
-| --------------------- | ------------- | --------------------- | ------------------------------ | ------------------------------------ | ------------------------------------ |
+| --------------------- | ------------- | ----------------- | ------------------------------ | ------------------------------------ | ------------------------------------ |
 | 8.0.x			       	| 4.0.x			| June 11, 2025	  	| June 11, 2026				| June 11, 2027							  		| June 11, 2028
 | 7.9.x			       	| 3.9.x			| February 19, 2025	| February 19, 2027		| February 19, 2027								| February 19, 2028
 | 7.8.x		   	    	| 3.8.x			| December 2, 2024	| December 2, 2026		| December 2, 2026								| December 2, 2027
