@@ -52,7 +52,7 @@ et non plus l'ancienne image cp-enterprise-control-center qui reste limitée aux
 
 Versions disponibles pour Control Center "Next-Gen" :
 Les versions du nouveau Control Center compatibles avec Confluent Platform 8.0 sont:​
-
+| ---------------------- | -------------- | -------------------------------- |
 | Version Control Center | Date de sortie | Compatibilité Confluent Platform |
 | ---------------------- | -------------- | -------------------------------- |
 | 2.3.0                  | 22/10/2025     | 8.1                              |
@@ -63,7 +63,7 @@ Les versions du nouveau Control Center compatibles avec Confluent Platform 8.0 s
 | 2.0.0                  | 15/05/2025     | 7.5-7.9                          |
 
 Pour utiliser le script ici, il faut donc prendre une release <8.0.0
-
+| --------------------- | ------------- | ------------------- | ------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | Confluent Platform	| Apache Kafka®	| Release Date        | Confluent Community software End of Support	| Confluent Enterprise Standard End of Support  | Confluent Enterprise Platinum End of Support  |
 | --------------------- | ------------- | ------------------- | ------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | 8.0.x			       	| 4.0.x			| June 11, 2025	  	  | June 11, 2026			                   	| June 11, 2027						   	  		| June 11, 2028                  	            | 
