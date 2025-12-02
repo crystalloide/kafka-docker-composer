@@ -1,5 +1,5 @@
 # kafka-docker-composer
-Script Python qui permet de générer un fichier docker-compose.yaml à partir d'un modèle Jinja2 et de paramètres
+Script Python qui permet de générer un fichier docker-compose.yaml à partir d'un modèle Jinja2 et des paramètres fournis par défaut ou dans la ligne de commande
 
 **Usage :**
 
