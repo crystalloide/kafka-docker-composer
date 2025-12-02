@@ -79,7 +79,7 @@ Pour utiliser le script ici, il faut donc prendre une release <8.0.0
 
 ```
 
-**Exemples :**
+**Exemple N°1 :**
 
 ```
 # Exemple 1 : Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center
@@ -104,6 +104,7 @@ docker compose up -d
 docker compose down -d -v
 ```
 
+**Autre exemples :**
 
 ```
 # Exemple 2 : 
