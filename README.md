@@ -1,5 +1,5 @@
 # kafka-docker-composer
-Python script to generate a docker-compose.yaml file based on a Jinja2 template and parameters
+Script Python qui permet de générer un fichier docker-compose.yaml à partir d'un modèle Jinja2 et de paramètres
 
 **Usage:**
 
@@ -14,29 +14,29 @@ options:
   -r RELEASE, --release RELEASE
                         Docker images release [7.4.0]
   -b BROKERS, --brokers BROKERS
-                        Number of Brokers [1]
+                        Nombre de Brokers [1]
   -z ZOOKEEPERS, --zookeepers ZOOKEEPERS
-                        Number of ZooKeepers [0] - mutually exclusive with controllers
+                        Nombre de ZooKeepers [0] - mutuellement exclusif avec l'option -c CONTROLLERS
   -c CONTROLLERS, --controllers CONTROLLERS
-                        Number of Kafka Connector instances [0] - mutually exclusive with zookeepers
+                        Nombre de Contrôleurs Kafka [0] - mutuellement exclusif avec l'option -z ZOOKEEPERS
   -C CONNECTS, --connect CONNECTS
-                        Number of Kafka Connect instances [0]
+                        Nombre d'instances Kafka Connect [0]
   -s SCHEMA_REGISTRIES, --schema-registries SCHEMA_REGISTRIES
-                        Number of Schema Registry instances [0]
-  --control-center      Include Confluent Control Center [False]
-  --uuid UUID           UUID of the cluster [Nk018hRAQFytWskYqtQduw]
-  -p, --prometheus      Include Prometheus [False]
+                        Nombre d'instances de Schema Registry [0]
+  --control-center      déploie aussi Confluent Control Center [False]
+  --uuid UUID           UUID du cluster [Nk018hRAQFytWskYqtQduw]
+  -p, --prometheus      déploie Prometheus [False]
   --kafka-container KAFKA_CONTAINER
-                        Container used for Kafka, default [cp-server]
-  --racks RACKS         Number of racks among which the brokers will be distributed evenly [1]
+                        Container utilisé pour Kafka, default [cp-server]
+  --racks RACKS         Nombre de racks parmi lesquels les brokers seront répartis uniformément répartis [1]
   --zookeeper-groups ZOOKEEPER_GROUPS
-                        Number of zookeeper groups in a hierarchy [1]
+                        Nombre de groupes zookeeper dans la hiérarchie [1]
   --docker-compose-file DOCKER_COMPOSE_FILE
-                        Output file for docker-compose, default [docker-compose.yaml]
-  --config CONFIG       Properties config file, values will be overriden by command line arguments
+                        Nom du fichier produit pour docker-compose, defaut [docker-compose.yaml]
+  --config CONFIG       Fichier de paramètre config file, les valeurs seront remplacées par les valeurs des paramètres de la ligne de commande
 ```
 
-**Examples:**
+**Exemples:**
 ```
 > python3 kafka_docker_composer.py -b 4 -z 3 -r 7.3.1
 > docker-compose up -d
@@ -49,18 +49,21 @@ options:
 
 **Connectors**
 
-There are a few preconfigured connector plugins in the volumes/connector-plugin-jars directory that will be
-automatically mapped into the kafka-connect instances. Add required connectors (unpacked from zip file) here
-if you require more.
+**Connecteurs**
 
-Also attached is a little postgres.yaml file that can be loaded with the Confluent Kafka Cluster with the -f option:
+Quelques plugins de connecteurs préconfigurés sont disponibles dans le répertoire volumes/connector-plugin-jars et seront
+automatiquement associés aux instances kafka-connect. Ajoutez ici les connecteurs nécessaires (décompressés du fichier zip)
+
+si vous en avez besoin de davantage.
+
+Un petit fichier postgres.yaml est également joint : il peut être déployé en complément du cluster Kafka Confluent à l'aide de l'option -f :
 
 ```shell
 > docker-compose -f docker-compose.yaml -f postgres.yaml up -d
 ```
 
-You can extend the same principle for any other data sources or sinks. Started together, all containers are 
-started in the same network for easy testing.
+Vous pouvez étendre ce principe à toute autre source ou destination de données. 
+Démarrés simultanément, tous les conteneurs sont démarrés sur le même réseau pour faciliter les tests.
 
 **TODO:**
 * Add security
