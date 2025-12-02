@@ -36,15 +36,30 @@ options:
   --config CONFIG       Fichier de paramètre config file, les valeurs seront remplacées par les valeurs des paramètres de la ligne de commande
 ```
 
-**Exemples :**
+**Installation :**
 ```
-> python3 kafka_docker_composer.py -b 4 -z 3 -r 7.3.1
-> docker-compose up -d
+cd ~
+rm -Rf kafka-docker-composer
+git clone https://github.com/crystalloide/kafka-docker-composer
+cd kafka-docker-composer
+```
+
+**Exemples :**
+
+```
+# Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center 
+python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 1 --control-center -r 8.0.0
+docker-compose up -d
 ```
 
 ```
-> python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 2 --control-center  
-> docker-compose up -d
+python3 kafka_docker_composer.py -b 4 -z 3 -r 7.3.1
+docker-compose up -d
+```
+
+```
+python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 2 --control-center  
+docker-compose up -d
 ```
 
 **Connecteurs :**
