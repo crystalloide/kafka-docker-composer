@@ -47,8 +47,6 @@ options:
 > docker-compose up -d
 ```
 
-**Connectors**
-
 **Connecteurs**
 
 Quelques plugins de connecteurs préconfigurés sont disponibles dans le répertoire volumes/connector-plugin-jars et seront
