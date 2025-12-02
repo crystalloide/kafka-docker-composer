@@ -97,7 +97,7 @@ cat docker-compose.yml
 docker compose up -d
 ```
 
-# Pour arrêter et nettoyer l'environnement  : 
+### Pour arrêter et nettoyer l'environnement  : ###
 
 ```
 # Une fois les expérimentations réalisées, on peut souhaiter arrêter l'environnement : 
