@@ -1,7 +1,7 @@
 # kafka-docker-composer
 Script Python qui permet de générer un fichier docker-compose.yaml à partir d'un modèle Jinja2 et de paramètres
 
-**Usage:**
+**Usage :**
 
 ```
 usage: kafka_docker_composer.py [-h] [-r RELEASE] [-b BROKERS] [-z ZOOKEEPERS] [-c CONTROLLERS] [-s SCHEMA_REGISTRIES] [--control-center] [--uuid UUID] [-p] [--kafka-container KAFKA_CONTAINER] [--racks RACKS]
@@ -36,7 +36,7 @@ options:
   --config CONFIG       Fichier de paramètre config file, les valeurs seront remplacées par les valeurs des paramètres de la ligne de commande
 ```
 
-**Exemples:**
+**Exemples :**
 ```
 > python3 kafka_docker_composer.py -b 4 -z 3 -r 7.3.1
 > docker-compose up -d
@@ -47,7 +47,7 @@ options:
 > docker-compose up -d
 ```
 
-**Connecteurs**
+**Connecteurs :**
 
 Quelques plugins de connecteurs préconfigurés sont disponibles dans le répertoire volumes/connector-plugin-jars et seront
 automatiquement associés aux instances kafka-connect. Ajoutez ici les connecteurs nécessaires (décompressés du fichier zip)
@@ -63,7 +63,7 @@ Un petit fichier postgres.yaml est également joint : il peut être déployé e
 Vous pouvez étendre ce principe à toute autre source ou destination de données. 
 Démarrés simultanément, tous les conteneurs sont démarrés sur le même réseau pour faciliter les tests.
 
-**TODO:**
-* Add security
-* Fix dashboards for Grafana
+** Reste à faire :**
+* Ajouter la gestion des aspects "sécurité"
+* Corriger les tableaux de bord pour Grafana
 
