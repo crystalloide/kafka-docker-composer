@@ -82,19 +82,29 @@ Pour utiliser le script ici, il faut donc prendre une release <8.0.0
 **Exemples :**
 
 ```
-# Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center
-docker search confluentinc
+# Exemple 1 : Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center
+
+# Pour chercher la version disponible de l'image docker de Control Center dans l'exemple ici de version 7.9 : 
+curl -s https://registry.hub.docker.com/v2/repositories/confluentinc/cp-enterprise-control-center/tags/?page_size=100 | jq '.results[] | select(.name | contains("7.9")) | .name'
+
+# Et on peut ensuite lancer la génération du docker compose avec la version souhaitée :
 python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 1 --control-center -r 7.9.5
-cat docker-compose.yml 
+
+# On regarde le contenu généré : 
+cat docker-compose.yml
+
+# On démarre l'envrionnement : 
 docker compose up -d
 ```
 
 ```
+# Exemple 2 : 
 python3 kafka_docker_composer.py -b 4 -z 3 -r 7.3.1
 docker compose up -d
 ```
 
 ```
+# Exemple 3 : 
 python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 2 --control-center  
 docker compose up -d
 ```
