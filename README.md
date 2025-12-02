@@ -49,6 +49,7 @@ cd kafka-docker-composer
 ```
 # Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center 
 python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 1 --control-center -r 8.0.0
+cat docker-compose.yml 
 docker-compose up -d
 ```
 
