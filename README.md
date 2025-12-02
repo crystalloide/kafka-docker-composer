@@ -93,9 +93,17 @@ python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries
 # On regarde le contenu généré : 
 cat docker-compose.yml
 
-# On démarre l'envrionnement : 
+# On démarre l'environnement : 
 docker compose up -d
 ```
+
+# Pour arrêter et nettoyer l'environnement  : 
+
+```
+# Une fois les expérimentations réalisées, on peut souhaiter arrêter l'environnement : 
+docker compose down -d -v
+```
+
 
 ```
 # Exemple 2 : 
