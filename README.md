@@ -47,7 +47,7 @@ cd kafka-docker-composer
 **A savoir :**
 ```
 Image Docker pour Confluent Platform 8.0 :
-Pour Confluent Platform 8.0, l'image Docker à utiliser est confluentinc/cp-enterprise-control-center-next-gen,
+A partir de Confluent Platform 8.0, l'image Docker à utiliser est confluentinc/cp-enterprise-control-center-next-gen,
 et non plus l'ancienne image cp-enterprise-control-center qui reste limitée aux versions 7.x et antérieures.​
 
 Versions disponibles pour Control Center "Next-Gen" :
@@ -62,13 +62,15 @@ Les versions du nouveau Control Center compatibles avec Confluent Platform 8.0 s
 | 2.1.0                  | 23/05/2025     | 7.5-7.9, 8.0                     |
 | 2.0.0                  | 15/05/2025     | 7.5-7.9                          |
 
+Pour utiliser le script ici, il faut donc prendre une release <8.0.0 
 ```
 
 **Exemples :**
 
 ```
-# Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center 
-python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 1 --control-center -r 8.0.1
+# Cluster  3 controleurs 3 brockers 1 schema-registry 1 control-center
+docker search confluentinc
+python3 kafka_docker_composer.py --controllers 3 --brokers 3 --schema-registries 1 --control-center -r 7.9.5
 cat docker-compose.yml 
 docker compose up -d
 ```
